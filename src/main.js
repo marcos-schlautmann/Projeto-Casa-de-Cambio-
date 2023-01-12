@@ -6,7 +6,7 @@ const inputMoeda = document.getElementById('input-moeda');
 
 
 botaoPesquisar.addEventListener('click', () => {
-    if (inputMoeda.innerHTML.length === 0) {
+    if (!(inputMoeda)) {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -40,6 +40,9 @@ const resultado = fetch(url)
     .then((data) => {
         const { rates } = data;
         capturaMoedas(rates);
+    })
+    .catch(() => {
+        
     });
 
 console.log(resultado);
